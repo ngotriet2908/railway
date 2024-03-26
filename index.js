@@ -15,9 +15,17 @@ app.get("/", (req,res)=> {
 app.post("/", (req,res)=> {
     log("================================================")
     log(req)
+    log("-------------------header-----------------------")
+    log(JSON.stringify(req.headers));
+    log("--------------------body------------------------")
+    log(JSON.stringify(req.body));
+    log("---------------originalUrl----------------------")
+    log(req.originalUrl);
+    log("-----------------------url----------------------")
+    log(req.url);
+    log("================================================")
     res.status(200)
     res.end()
-    log("================================================")
 })
 
 app.listen(PORT, () => console.log(`Sever is running port ${PORT} ...`));
