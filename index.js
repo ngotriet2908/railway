@@ -13,12 +13,11 @@ app.get("/", (req,res)=> {
 })
 
 app.post("/", (req,res)=> {
-    log("Request")
+    log("================================================")
     log(req)
-    log("Response")
-    log(res)
     res.status(200)
     res.end()
+    log("================================================")
 })
 
 app.listen(PORT, () => console.log(`Sever is running port ${PORT} ...`));
