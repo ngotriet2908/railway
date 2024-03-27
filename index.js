@@ -8,6 +8,8 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
+app.use(express.json());
+
 app.get("/", (req,res)=> {
     res.send("Hello there! Api is working")
 })
@@ -17,7 +19,10 @@ app.post("/", (req,res)=> {
     log(req)
     log("-------------------header-----------------------")
     log(JSON.stringify(req.headers));
+    log("-------------------query------------------------")
+    log(req.query);
     log("--------------------body------------------------")
+    log(req.body);
     log(JSON.stringify(req.body));
     log("---------------originalUrl----------------------")
     log(req.originalUrl);
