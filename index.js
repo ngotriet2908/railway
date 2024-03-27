@@ -35,8 +35,7 @@ app.post("/", (req,res)=> {
     log("-----------------------url----------------------")
     log(req.url);
     log("================================================")
-    res.status(200)
-    res.end()
+    res.status(201).json('all ok');
 })
 
 app.listen(PORT, () => console.log(`Sever is running port ${PORT} ...`));
